@@ -10,7 +10,7 @@ Learn more about [Metamask Delegation Toolkit](https://metamask.io/developer/del
 
 1. **Pimlico API Key**: In this template, we use Pimlico's Bundler and Paymaster services to submit user operations and sponsor transactions, respectively. You can retrieve the required API key from [Pimlico's Dashboard](https://dashboard.pimlico.io/apikeys).
 
-2. **Web3Auth Client ID**: During setup, if you choose the embedded wallet option, you'll need to create a new project on the Web3Auth Dashboard and obtain the Client ID. For full instructions, [refer to the Web3Auth documentation](https://web3auth.io/docs/dashboard-setup#getting-started).
+2. **RPC URL** In this template, you’ll need an RPC URL for the Sepolia chain. You can use any preferred RPC provider or a public RPC. However, we recommend using a paid RPC to ensure better reliability and avoid potential rate-limiting issues.
 
 ## Project Structure
 
@@ -49,26 +49,14 @@ Update the following environment variables in the `.env` file located in your pr
 ```
 NEXT_PUBLIC_PIMLICO_API_KEY =
 NEXT_PUBLIC_RPC_URL= 
-
-# Specify the Web3Auth Client ID if you opt
-# for the embedded wallet option.
-NEXT_PUBLIC_WEB3AUTH_CLIENT_ID =
-
-# The Web3Auth network is configured according to
-# the your chosen Web3Auth network input.
-NEXT_PUBLIC_WEB3AUTH_NETWORK =
 ```
 
 ## Getting Started
 
-First, start the development server using the package manager you selected during setup.
+First, start the development server
 
 ```bash
-npm run dev
-# or
 yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
