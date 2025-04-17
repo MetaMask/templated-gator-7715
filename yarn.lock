@@ -20,41 +20,41 @@ __metadata:
   linkType: hard
 
 "@emnapi/core@npm:^1.4.0":
-  version: 1.4.1
-  resolution: "@emnapi/core@npm:1.4.1"
+  version: 1.4.3
+  resolution: "@emnapi/core@npm:1.4.3"
   dependencies:
-    "@emnapi/wasi-threads": 1.0.1
+    "@emnapi/wasi-threads": 1.0.2
     tslib: ^2.4.0
-  checksum: 29f2f8fd3c1dce2ef69a2207275d5b73cbd67493f7329b3b04bf285612d86135660629ecd23db9915b6a98e5bd405a3b1870693f321bfda25aec646928356656
+  checksum: 1c757d380b3cecec637a2eccfb31b770b995060f695d1e15b29a86e2038909a24152947ef6e4b6586759e6716148ff17f40e51367d1b79c9a3e1b6812537bdf4
   languageName: node
   linkType: hard
 
 "@emnapi/runtime@npm:^1.2.0, @emnapi/runtime@npm:^1.4.0":
-  version: 1.4.1
-  resolution: "@emnapi/runtime@npm:1.4.1"
+  version: 1.4.3
+  resolution: "@emnapi/runtime@npm:1.4.3"
   dependencies:
     tslib: ^2.4.0
-  checksum: 69e2fefea117cfb0dccf784c9a1ced3e568f655922927953bdbc4774c4aaa37aa488cc361f9bcb7a97b9bd76de7ccd37b0e5e87847c6b97a9c08eaaa94d27715
+  checksum: ff2074809638ed878e476ece370c6eae7e6257bf029a581bb7a290488d8f2a08c420a65988c7f03bfc6bb689218f0cd995d2f935bd182150b357fc2341142f4f
   languageName: node
   linkType: hard
 
-"@emnapi/wasi-threads@npm:1.0.1, @emnapi/wasi-threads@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@emnapi/wasi-threads@npm:1.0.1"
+"@emnapi/wasi-threads@npm:1.0.2, @emnapi/wasi-threads@npm:^1.0.1":
+  version: 1.0.2
+  resolution: "@emnapi/wasi-threads@npm:1.0.2"
   dependencies:
     tslib: ^2.4.0
-  checksum: e154880440ff9bfe67b417f30134f0ff6fee28913dbf4a22de2e67dda5bf5b51055647c5d1565281df17ef5dfcc89256546bdf9b8ccfd07e07566617e7ce1498
+  checksum: c289cd3d0e26f11de23429a4abc7f99927917c0871d5a22637cbb75170f2b58d3a42e80d76dea89d054e529f79e35cdc953324819a7f990305d0db2897fa5fab
   languageName: node
   linkType: hard
 
 "@eslint-community/eslint-utils@npm:^4.2.0, @eslint-community/eslint-utils@npm:^4.4.0":
-  version: 4.6.0
-  resolution: "@eslint-community/eslint-utils@npm:4.6.0"
+  version: 4.6.1
+  resolution: "@eslint-community/eslint-utils@npm:4.6.1"
   dependencies:
     eslint-visitor-keys: ^3.4.3
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0 || >=8.0.0
-  checksum: 1d866093009949a269d5b5d19297fd8ed27c537edb1238f760af09b4ca7fd51d223393c223a664faa79b36dd4568a7d8fa78b2a96c4f90e412f8ce9720b2fd64
+  checksum: 924f38a069cc281dacd231f1293f5969dff98d4ad867f044ee384f1ad35937c27d12222a45a7da0b294253ffbaccc0a6f7878aed3eea8f4f9345f195ae24dea2
   languageName: node
   linkType: hard
 
@@ -388,40 +388,39 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/delegation-toolkit@npm:^0.10.1":
-  version: 0.10.1
-  resolution: "@metamask/delegation-toolkit@npm:0.10.1"
+"@metamask/delegation-toolkit@npm:^0.10.2":
+  version: 0.10.2
+  resolution: "@metamask/delegation-toolkit@npm:0.10.2"
   dependencies:
-    "@metamask/delegation-utils": ^0.9.0
+    "@metamask/delegation-utils": ^0.10.0
     webauthn-p256: ^0.0.5
   peerDependencies:
     viem: ">=2.18.2 <3.0.0"
-  checksum: 06d89583924c6f5a4dd9bfb31d8dafd695908760a69a5a0350a476faae966d783938855acf0c3505b6e6d46f1f283fe30bc0db8c3ed989339c6ef4819b2388d3
+  checksum: 08e80512faf6f26f6a2142d6f25f9850cb79690e7fd583e9d06902d4e22b3b65d27fc552a5bf5ead5de5ba8b39cd397841d3f11e151332aa0592c2dfe77fdce4
   languageName: node
   linkType: hard
 
-"@metamask/delegation-utils@npm:^0.9.0":
-  version: 0.9.0
-  resolution: "@metamask/delegation-utils@npm:0.9.0"
+"@metamask/delegation-utils@npm:^0.10.0":
+  version: 0.10.0
+  resolution: "@metamask/delegation-utils@npm:0.10.0"
   dependencies:
-    "@metamask/auto-changelog": ^3.4.4
     "@metamask/delegation-abis": ^0.9.0
     "@metamask/delegation-deployments": ^0.9.0
     buffer: ^6.0.3
   peerDependencies:
     viem: ">=2.18.2 <3.0.0"
-  checksum: 17c71100bc9665c2551741ede08a3ade35eac05cd18f720ccadf2397ac23b2fbe69194851d957f40d016c394f13682b45bd8d0b47449e73a60199957c2f56127
+  checksum: a7386bb23c3145d7f887afecac659ef0ee3377ddc9bff999ed278e0970b9ae3eb50e1e46e21cdc6cac58047ac3129b7b4099dc39e04975746d59e0f2f5102f35
   languageName: node
   linkType: hard
 
 "@napi-rs/wasm-runtime@npm:^0.2.8":
-  version: 0.2.8
-  resolution: "@napi-rs/wasm-runtime@npm:0.2.8"
+  version: 0.2.9
+  resolution: "@napi-rs/wasm-runtime@npm:0.2.9"
   dependencies:
     "@emnapi/core": ^1.4.0
     "@emnapi/runtime": ^1.4.0
     "@tybys/wasm-util": ^0.9.0
-  checksum: c7e7ec1c19e6e0bfb9d1553fb3b25f46d9ffb48f6c54e95b7cf939c294d8cda254da72575319999e77891805b15688da1db4926e6f6f0c31b1a08722e7b92d62
+  checksum: bffa375d960ebe5f0e98583f46a14bf4aaa086c2cce45582229b36eb0f5987d9dae1c184ebc218df504ffdd92a7169f73ac60697e6e2a2fc064277e3150a3764
   languageName: node
   linkType: hard
 
@@ -1415,9 +1414,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001579, caniuse-lite@npm:^1.0.30001688, caniuse-lite@npm:^1.0.30001702":
-  version: 1.0.30001713
-  resolution: "caniuse-lite@npm:1.0.30001713"
-  checksum: 45fd9ae77965a694818d495671ba3e9a87e4eed063824b2244c0b83b1ab0ba2d8e71dcd45441f638caadf8f0c99e154a4326bbef5c291327090cdc38feeda6fd
+  version: 1.0.30001714
+  resolution: "caniuse-lite@npm:1.0.30001714"
+  checksum: e68fbee9a115f842f0d907e033f14e8d476f965473556fb993c8870854a2608573eebf4dbc2aa5b03caa9c6224ff4afe63ea8c702566fbbcb78c369fba72395b
   languageName: node
   linkType: hard
 
@@ -3120,7 +3119,7 @@ __metadata:
   resolution: "my-gator-app@workspace:."
   dependencies:
     "@eslint/eslintrc": ^3
-    "@metamask/delegation-toolkit": ^0.10.1
+    "@metamask/delegation-toolkit": ^0.10.2
     "@tailwindcss/postcss": ^4.1.1
     "@types/node": ^20
     "@types/react": ^19
@@ -3425,15 +3424,15 @@ __metadata:
   linkType: hard
 
 "permissionless@npm:^0.2.36":
-  version: 0.2.41
-  resolution: "permissionless@npm:0.2.41"
+  version: 0.2.42
+  resolution: "permissionless@npm:0.2.42"
   peerDependencies:
     ox: 0.6.7
     viem: ^2.23.2
   peerDependenciesMeta:
     ox:
       optional: true
-  checksum: 362c2dc5b7c81755335729aa2e2bba65f38da118bbee68d7afef65ba3f0d21d90f53838c95b6a50182766cd418955bbb80e8da9b38988e502e6f13e8e0313c31
+  checksum: c835ca5a53ff7f921b07a95c9321ab49f4ca37821aa8322aff9e0168321eaf28beefe861216ce6fad6733d27c7fb384d6f7067d43dc167f10f13c6de8c403841
   languageName: node
   linkType: hard
 
@@ -4341,8 +4340,8 @@ __metadata:
   linkType: hard
 
 "viem@npm:^2.23.10":
-  version: 2.26.5
-  resolution: "viem@npm:2.26.5"
+  version: 2.27.2
+  resolution: "viem@npm:2.27.2"
   dependencies:
     "@noble/curves": 1.8.1
     "@noble/hashes": 1.7.1
@@ -4357,7 +4356,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 32d779469103d52156fb25a60c79fd53e3447f4d76ad4e1cec6f89156593c6a488bc9489856c7c503f4e508382620181df1a2161f554ebeafa0718238425cfa9
+  checksum: dbf3c7bf8635de13a95aa353ee389ca753aed5fbbf9fee4da2000aea43747a8a35587dcedd8c07fcfac197350182854166a2298e469e2c2b82ec9d7f937fd3d6
   languageName: node
   linkType: hard
 
