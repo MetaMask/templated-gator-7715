@@ -1,10 +1,10 @@
-# NextJS Gator Starter Template
+# NextJS 7715 Starter Template
 
-This is a NextJS Gator Starter template created with create-gator-app.
+This is a NextJS 7715 Starter template created with [create-gator-app](https://www.npmjs.com/package/create-gator-app).
 
-This template is meant to help you bootstrap your own projects with [Metamask Delegation Toolkit](https://metamask.io/developer/delegation-toolkit). It helps you build smart accounts with account abstraction, and powerful delegation features.
+This template is meant to help you bootstrap your own projects with [Metamask Delegation Toolkit](https://docs.metamask.io/delegation-toolkit/). It helps you build smart accounts with account abstraction, and powerful delegation features.
 
-Learn more about [Metamask Delegation Toolkit](https://metamask.io/developer/delegation-toolkit).
+Learn more about [Metamask Delegation Toolkit](https://docs.metamask.io/delegation-toolkit/).
 
 ## Prerequisites
 
@@ -73,5 +73,4 @@ This template demonstrates a complete ERC7715 delegation flow:
 
 To learn more about Delegation Toolkit, take a look at the following resources:
 
-- [Delegation Toolkit Documentation](https://docs.gator.metamask.io/) - learn about Delegation Toolkit features and API.
-
+- [Delegation Toolkit Documentation](https://docs.metamask.io/delegation-toolkit/) - learn about Delegation Toolkit features and API.
