@@ -1147,31 +1147,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"NextJS 7715 Starter Template@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "NextJS 7715 Starter Template@workspace:."
-  dependencies:
-    "@eslint/eslintrc": ^3
-    "@metamask/delegation-toolkit": ^0.11.0
-    "@tailwindcss/postcss": ^4.1.1
-    "@types/node": ^20
-    "@types/react": ^19
-    "@types/react-dom": ^19
-    autoprefixer: ^10.4.21
-    eslint: ^9
-    eslint-config-next: 15.2.2
-    lucide-react: ^0.487.0
-    next: 15.2.2
-    permissionless: ^0.2.46
-    postcss: ^8.5.3
-    react: ^19.0.0
-    react-dom: ^19.0.0
-    tailwindcss: ^4.1.1
-    typescript: ^5
-    viem: ^2.29.2
-  languageName: unknown
-  linkType: soft
-
 "abitype@npm:1.0.8, abitype@npm:^1.0.8":
   version: 1.0.8
   resolution: "abitype@npm:1.0.8"
@@ -3269,6 +3244,31 @@ __metadata:
   checksum: f7db89f62511d24682e255250530d018c808d7911a868fc0a8cd4ed87b6cea7f609c7d9e5869616b64351eef3da4c3ef45349e70e910d6dec3ff4d4faf604c04
   languageName: node
   linkType: hard
+
+"nextjs-7715-starter-template@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "nextjs-7715-starter-template@workspace:."
+  dependencies:
+    "@eslint/eslintrc": ^3
+    "@metamask/delegation-toolkit": ^0.11.0
+    "@tailwindcss/postcss": ^4.1.1
+    "@types/node": ^20
+    "@types/react": ^19
+    "@types/react-dom": ^19
+    autoprefixer: ^10.4.21
+    eslint: ^9
+    eslint-config-next: 15.2.2
+    lucide-react: ^0.487.0
+    next: 15.2.2
+    permissionless: ^0.2.46
+    postcss: ^8.5.3
+    react: ^19.0.0
+    react-dom: ^19.0.0
+    tailwindcss: ^4.1.1
+    typescript: ^5
+    viem: ^2.29.2
+  languageName: unknown
+  linkType: soft
 
 "node-releases@npm:^2.0.19":
   version: 2.0.19
