@@ -48,7 +48,6 @@ Update the following environment variables in the `.env` file located in your pr
 
 ```
 NEXT_PUBLIC_PIMLICO_API_KEY =
-NEXT_PUBLIC_RPC_URL= 
 ```
 
 ## Getting Started

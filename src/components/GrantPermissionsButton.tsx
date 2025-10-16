@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { createClient, custom } from "viem";
+import { createClient, custom, parseEther } from "viem";
 import { sepolia } from "viem/chains";
 import { erc7715ProviderActions } from "@metamask/delegation-toolkit/experimental";
 import { useSessionAccount } from "@/providers/SessionAccountProvider";
@@ -47,7 +47,7 @@ export default function GrantPermissionsButton() {
       const oneDayInSeconds = 24 * 60 * 60;
       const expiry = currentTime + oneDayInSeconds;
 
-      const permissions = await client.grantPermissions([
+      const permissions = await client.requestExecutionPermissions([
         {
           chainId: sepolia.id,
           expiry,
@@ -57,14 +57,15 @@ export default function GrantPermissionsButton() {
               address: sessionAccount.address,
             },
           },
+          isAdjustmentAllowed: false,
           permission: {
-            type: "native-token-stream",
+            type: "native-token-periodic",
             data: {
-              initialAmount: 1n, // 1 WEI
-              amountPerSecond: 1n, // 1 WEI per second
-              startTime: currentTime,
-              maxAmount: 10n, // 10 WEI
-              justification: "Payment for a subscription service",
+              // 0.001 ETH in WEI format.
+              periodAmount: parseEther("0.001"),
+              // 1 day in seconds
+              periodDuration: 86400,
+              justification: "Permission to transfer 0.001 ETH every day",
             },
           },
         },
