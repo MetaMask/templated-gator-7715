@@ -1,6 +1,6 @@
 # NextJS 7715 Starter Template
 
-This is a NextJS 7715 Starter template created with [create-gator-app](https://www.npmjs.com/package/create-gator-app).
+This is a NextJS 7715 Starter template created with [@metamask/create-gator-app](https://www.npmjs.com/package/@metamask/create-gator-app).
 
 This template is meant to help you bootstrap your own projects with [Metamask Delegation Toolkit](https://docs.metamask.io/delegation-toolkit/). It helps you build smart accounts with account abstraction, and powerful delegation features.
 
@@ -64,12 +64,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 This template demonstrates a complete ERC7715 delegation flow:
 
-1. **Create Session Account**: Users can create a delegator smart account that will be used to redeem permissions.
-2. **Grant Permissions**: Users can grant permissions to the session account, which involves installing MetaMask snaps and approving the delegation.
-3. **Redeem Permissions**: The session account can redeem the granted permissions to perform actions on behalf of the user.
+1. **Create Session Account**: Users can create a session account that will be used to redeem permissions.
+2. **Grant Permissions**: Users can grant ERC-7715 permissions to the session account.
+3. **Redeem Permissions**: The session account can use the granted permissions to perform actions on behalf of the MetaMask user.
 
 ## Learn More
 
 To learn more about Delegation Toolkit, take a look at the following resources:
 
+- [ERC-7715 guide](https://docs.metamask.io/delegation-toolkit/guides/erc7715/execute-on-metamask-users-behalf/) - Learn how to use ERC-7715 permissions.
 - [Delegation Toolkit Documentation](https://docs.metamask.io/delegation-toolkit/) - learn about Delegation Toolkit features and API.
