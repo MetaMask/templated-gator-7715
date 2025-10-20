@@ -36,7 +36,7 @@ export default function RedeemPermissionButton() {
     setLoading(true);
 
     try {
-      const { accountMeta, context, signerMeta } = permission;
+      const { context, signerMeta } = permission;
 
       if (!signerMeta) {
         console.error("No signer meta found");
@@ -75,7 +75,6 @@ export default function RedeemPermissionButton() {
           },
         ],
         ...fee,
-        accountMetadata: accountMeta,
       });
 
       const { receipt } = await bundlerClient.waitForUserOperationReceipt({
