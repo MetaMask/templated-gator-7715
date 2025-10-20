@@ -62,7 +62,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Application Flow
 
-This template demonstrates a complete ERC7715 delegation flow:
+This template demonstrates a complete ERC-7715 flow:
 
 1. **Create Session Account**: Users can create a session account that will be used to redeem permissions.
 2. **Grant Permissions**: Users can grant ERC-7715 permissions to the session account.
