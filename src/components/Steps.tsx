@@ -72,7 +72,7 @@ export default function Steps() {
           <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-6 shadow-lg border border-gray-200 dark:border-gray-700">
             <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
               Grant permissions to the session account that was created in the previous
-              step. This will prompt the user to grant the native token periodic transfer
+              step. This will prompt the user to grant the native token streaming
               permissions to the session account.
             </p>
             <p className="text-gray-700 dark:text-gray-300 mt-4 leading-relaxed">

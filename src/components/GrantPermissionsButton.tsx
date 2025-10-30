@@ -16,7 +16,7 @@ export default function GrantPermissionsButton() {
   const [isAdjustmentAllowed, setIsAdjustmentAllowed] = useState<boolean>(true);
 
   /**
-   * Handles the permission granting process for native token periodic transfer.
+   * Handles the permission granting process for native token streaming.
    *
    * This function:
    * 1. Creates a Viem client with ERC-7715 provider actions
@@ -24,7 +24,7 @@ export default function GrantPermissionsButton() {
    *    - Chain ID (Sepolia testnet)
    *    - Expiry time (24 hours from current time)
    *    - Signer details (delegate smart account)
-   *    - Native token periodic transfer permission configuration
+   *    - Native token streaming permission configuration
    * 3. Grants the permissions through the MetaMask snap
    * 4. Stores the granted permissions using the PermissionProvider
    * 5. Updates the application step
