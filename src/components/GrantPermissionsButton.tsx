@@ -13,6 +13,7 @@ export default function GrantPermissionsButton() {
   const { sessionAccount } = useSessionAccount();
   const { savePermission } = usePermissions();
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isAdjustmentAllowed, setIsAdjustmentAllowed] = useState<boolean>(true);
 
   /**
    * Handles the permission granting process for native token periodic transfer.
@@ -57,15 +58,14 @@ export default function GrantPermissionsButton() {
               address: sessionAccount.address,
             },
           },
-          isAdjustmentAllowed: false,
+          isAdjustmentAllowed,
           permission: {
-            type: "native-token-periodic",
+            type: "native-token-stream",
             data: {
-              // 0.001 ETH in WEI format.
-              periodAmount: parseEther("0.001"),
-              // 1 day in seconds
-              periodDuration: 86400,
-              justification: "Permission to transfer 0.001 ETH every day",
+              amountPerSecond: parseEther("0.00001"),
+              maxAmount: parseEther("1"),
+              initialAmount: parseEther("0.001"),
+              justification: "Permission to transfer 0.00001 ETH every second",
             },
           },
         },
@@ -80,6 +80,19 @@ export default function GrantPermissionsButton() {
 
   return (
     <div className="space-y-6">
+      <div className="flex items-center space-x-3 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700">
+        <input
+          type="checkbox"
+          id="adjustmentAllowed"
+          checked={isAdjustmentAllowed}
+          onChange={(e) => setIsAdjustmentAllowed(e.target.checked)}
+          disabled={isLoading}
+          className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500 cursor-pointer"
+        />
+        <label htmlFor="adjustmentAllowed" className="text-sm font-medium text-gray-700 dark:text-gray-300 cursor-pointer">
+          Allow adjustments to this permission
+        </label>
+      </div>
       <Button
         className="w-full space-x-2"
         onClick={handleGrantPermissions}

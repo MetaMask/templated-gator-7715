@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { createPublicClient, Hex, http } from "viem";
+import { createPublicClient, Hex, http, parseEther } from "viem";
 import { sepolia } from "viem/chains";
 import { pimlicoClient } from "@/services/pimlicoClient";
 import { bundlerClient } from "@/services/bundlerClient";
@@ -68,8 +68,7 @@ export default function RedeemPermissionButton() {
         calls: [
           {
             to: sessionAccount.address,
-            data: '0x',
-            value: 1n,
+            value: parseEther("0.000001"),
             permissionsContext: context,
             delegationManager,
           },
@@ -120,7 +119,7 @@ export default function RedeemPermissionButton() {
             disabled={loading}
           >
             <span>
-              {loading ? "Processing Transaction..." : "Redeem Permission"}
+              {loading ? "Processing Transaction..." : "Transfer 0.000001 ETH on behalf of the user"}
             </span>
             {loading ? (
               <Loader2 className="h-5 w-5 animate-spin" />
@@ -141,7 +140,7 @@ export default function RedeemPermissionButton() {
         disabled={loading}
       >
         <span>
-          {loading ? "Processing Transaction..." : "Redeem Permission"}
+          {loading ? "Processing Transaction..." : "Transfer 0.000001 ETH on behalf of the user"}
         </span>
         {loading ? (
           <Loader2 className="h-5 w-5 animate-spin" />
