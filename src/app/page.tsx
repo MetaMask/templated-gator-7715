@@ -4,7 +4,6 @@ import Steps from "@/components/Steps";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import WalletInfoContainer from "@/components/WalletInfoContainer";
-import Loader from "@/components/Loader";
 import PermissionInfo from "@/components/PermissionInfo";
 
 export default function Home() {
