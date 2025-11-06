@@ -8,19 +8,17 @@ import { bundlerClient } from "@/services/bundlerClient";
 import { useSessionAccount } from "@/providers/SessionAccountProvider";
 import { usePermissions } from "@/providers/PermissionProvider";
 import { Loader2, CheckCircle, ExternalLink } from "lucide-react";
-import { config } from "@/config";
 import Button from "@/components/Button";
+import { useAccount, usePublicClient } from "wagmi";
 
 export default function RedeemPermissionButton() {
-  const { sessionAccount } = useSessionAccount();
-  const { permission } = usePermissions();
   const [loading, setLoading] = useState(false);
   const [txHash, setTxHash] = useState<Hex | null>(null);
 
-  const publicClient = createPublicClient({
-    chain: sepolia,
-    transport: http(),
-  });
+  const { sessionAccount } = useSessionAccount();
+  const { permission } = usePermissions();
+  const publicClient = usePublicClient();
+  const { chain } = useAccount();
 
   /**
    * Handles the redemption of delegation permissions.
@@ -29,10 +27,7 @@ export default function RedeemPermissionButton() {
    * @returns {Promise<void>}
    */
   const handleRedeemPermission = async () => {
-    if (!permission) return;
-
-    if (!sessionAccount) return;
-
+    if (!permission || !chain || !publicClient || !sessionAccount) return;
     setLoading(true);
 
     try {
@@ -52,7 +47,7 @@ export default function RedeemPermissionButton() {
         return;
       }
 
-      const { fast: fee } = await pimlicoClient.getUserOperationGasPrice();
+      const { fast: fee } = await pimlicoClient(chain.id).getUserOperationGasPrice();
 
       /**
        * Sends a user operation with delegation to the bundler client. Only the session account can redeem the delegation.
@@ -62,7 +57,7 @@ export default function RedeemPermissionButton() {
        * - Account metadata and gas fee information
        * @returns {Promise<Hex>} The hash of the user operation
        */
-      const hash = await bundlerClient.sendUserOperationWithDelegation({
+      const hash = await bundlerClient(chain.id).sendUserOperationWithDelegation({
         publicClient,
         account: sessionAccount,
         calls: [
@@ -77,7 +72,7 @@ export default function RedeemPermissionButton() {
         ...fee,
       });
 
-      const { receipt } = await bundlerClient.waitForUserOperationReceipt({
+      const { receipt } = await bundlerClient(chain.id).waitForUserOperationReceipt({
         hash,
       });
 
@@ -105,10 +100,10 @@ export default function RedeemPermissionButton() {
           <Button
             className="w-full space-x-2"
             onClick={() =>
-              window.open(`${config.ethScanerUrl}/tx/${txHash}`, '_blank')
+              window.open(`${chain?.blockExplorers?.default?.url}/tx/${txHash}`, '_blank')
             }
           >
-            <span>View on Etherscan</span>
+            <span>View on {chain?.blockExplorers?.default?.name}</span>
             <ExternalLink className="h-5 w-5" />
           </Button>
         </div>
