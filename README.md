@@ -2,9 +2,9 @@
 
 This is a NextJS 7715 Starter template created with [@metamask/create-gator-app](https://www.npmjs.com/package/@metamask/create-gator-app).
 
-This template is meant to help you bootstrap your own projects with [Metamask Delegation Toolkit](https://docs.metamask.io/delegation-toolkit/). It helps you build smart accounts with account abstraction, and powerful delegation features.
+This template is meant to help you bootstrap your own projects with [Metamask Smart Accounts Kit](https://docs.metamask.io/smart-accounts-kit/). It helps you build smart accounts with account abstraction, and powerful delegation features.
 
-Learn more about [Metamask Delegation Toolkit](https://docs.metamask.io/delegation-toolkit/).
+Learn more about [Metamask Smart Accounts Kit](https://docs.metamask.io/smart-accounts-kit/).
 
 ## Prerequisites
 
@@ -70,7 +70,7 @@ This template demonstrates a complete ERC-7715 flow:
 
 ## Learn More
 
-To learn more about Delegation Toolkit, take a look at the following resources:
+To learn more about Smart Accounts Kit, take a look at the following resources:
 
-- [ERC-7715 guide](https://docs.metamask.io/delegation-toolkit/guides/erc7715/execute-on-metamask-users-behalf/) - Learn how to use ERC-7715 permissions.
-- [Delegation Toolkit Documentation](https://docs.metamask.io/delegation-toolkit/) - learn about Delegation Toolkit features and API.
+- [ERC-7715 guide](https://docs.metamask.io/smart-accounts-kit/guides/advanced-permissions/execute-on-metamask-users-behalf/) - Learn how to use ERC-7715 permissions.
+- [Smart Accounts Kit Documentation](https://docs.metamask.io/smart-accounts-kit/) - Learn more about Smart Accounts Kit features and API.
