@@ -437,22 +437,10 @@
     "@metamask/utils" "^11.4.0"
     "@noble/hashes" "^1.8.0"
 
-"@metamask/delegation-deployments@^0.12.0":
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/@metamask/delegation-deployments/-/delegation-deployments-0.12.0.tgz#d2c33ca7901326df71382b340cc4017b38db7c73"
-  integrity sha512-9SB5DhLAnbpIWbFxP3UKPXLhCt8iiRjBBjZ7hqF5dMXy9buBEDpCRg+FJYRxYRecwporrTVrv+NfKUyCbL2ncw==
-
-"@metamask/delegation-toolkit@^0.13.0":
-  version "0.13.0"
-  resolved "https://registry.yarnpkg.com/@metamask/delegation-toolkit/-/delegation-toolkit-0.13.0.tgz#fd73bb9e1ae996a9ec204e1520354018227f1076"
-  integrity sha512-SVc2gcnKQ8KQodugfuXMs49pHO1x9AYw3Wmdg4yBEsgm5TF5zPpWFmAj+bOL8q+Fn+mHJAibFIrJBtS970G9Dw==
-  dependencies:
-    "@metamask/7715-permission-types" "^0.3.0"
-    "@metamask/delegation-abis" "^0.11.0"
-    "@metamask/delegation-core" "^0.2.0"
-    "@metamask/delegation-deployments" "^0.12.0"
-    buffer "^6.0.3"
-    webauthn-p256 "^0.0.10"
+"@metamask/delegation-deployments@^0.14.0":
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/@metamask/delegation-deployments/-/delegation-deployments-0.14.0.tgz#a1342d7632945f8dddae4f634e61b3751c8eb9c9"
+  integrity sha512-tQdBypR0JcJmRLlYF7Rvjv0EWWOgLdzgNmSQH40vN1hdBKqEqK37onMkMJWOjDxu3DiChdPDKZwXrVkN2elIcQ==
 
 "@metamask/eth-json-rpc-provider@^1.0.0":
   version "1.0.1"
@@ -601,6 +589,18 @@
     tslib "^2.6.0"
     util "^0.12.4"
     uuid "^8.3.2"
+
+"@metamask/smart-accounts-kit@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@metamask/smart-accounts-kit/-/smart-accounts-kit-0.1.0.tgz#f57c9726bd3ee8bf633575a9414eef12749e1c63"
+  integrity sha512-8p+Q6m/oK37dnh2tsYwUgdPI7bC+XDdo0T+K7GFIrhSgeqPwFhR92wPsZs5X1xEvAFs3kRNABLaTjPWb5dZfRg==
+  dependencies:
+    "@metamask/7715-permission-types" "^0.3.0"
+    "@metamask/delegation-abis" "^0.11.0"
+    "@metamask/delegation-core" "^0.2.0"
+    "@metamask/delegation-deployments" "^0.14.0"
+    buffer "^6.0.3"
+    webauthn-p256 "^0.0.10"
 
 "@metamask/superstruct@^3.0.0", "@metamask/superstruct@^3.1.0":
   version "3.2.1"
@@ -5932,7 +5932,7 @@ viem@2.23.2:
     ox "0.6.7"
     ws "8.18.0"
 
-viem@2.x, viem@>=2.29.0, viem@^2.1.1, viem@^2.21.26, viem@^2.27.2, viem@^2.31.7:
+viem@>=2.29.0, viem@^2.1.1, viem@^2.21.26, viem@^2.27.2, viem@^2.31.7, viem@^2.38.6:
   version "2.38.6"
   resolved "https://registry.yarnpkg.com/viem/-/viem-2.38.6.tgz#ab315bef8f872bce86f0f145e9b008b5e94f1904"
   integrity sha512-aqO6P52LPXRjdnP6rl5Buab65sYa4cZ6Cpn+k4OLOzVJhGIK8onTVoKMFMT04YjDfyDICa/DZyV9HmvLDgcjkw==

@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { createClient, custom, parseEther, WalletClient } from "viem";
-import { sepolia } from "viem/chains";
-import { erc7715ProviderActions } from "@metamask/delegation-toolkit/experimental";
+import { parseEther } from "viem";
+import { erc7715ProviderActions } from "@metamask/smart-accounts-kit/actions";
 import { useSessionAccount } from "@/providers/SessionAccountProvider";
 import { usePermissions } from "@/providers/PermissionProvider";
 import { Loader2, CheckCircle } from "lucide-react";

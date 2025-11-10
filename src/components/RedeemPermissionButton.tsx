@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { createPublicClient, Hex, http } from "viem";
-import { sepolia } from "viem/chains";
+import { Hex } from "viem";
 import { pimlicoClient } from "@/services/pimlicoClient";
 import { bundlerClient } from "@/services/bundlerClient";
 import { useSessionAccount } from "@/providers/SessionAccountProvider";
