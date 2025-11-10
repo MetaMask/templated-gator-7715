@@ -1,6 +1,6 @@
-# NextJS 7715 Starter Template
+# NextJS Advanced Permissions Starter
 
-This is a NextJS 7715 Starter template created with [@metamask/create-gator-app](https://www.npmjs.com/package/@metamask/create-gator-app).
+This is a NextJS Advanced Permissions (ERC-7715) starter created with [@metamask/create-gator-app](https://www.npmjs.com/package/@metamask/create-gator-app).
 
 This template is meant to help you bootstrap your own projects with [Metamask Smart Accounts Kit](https://docs.metamask.io/smart-accounts-kit/). It helps you build smart accounts with account abstraction, and powerful delegation features.
 
@@ -62,15 +62,15 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Application Flow
 
-This template demonstrates a complete ERC-7715 flow:
+This template demonstrates a complete MetaMask Advanced Permissions (ERC-7715) flow:
 
 1. **Create Session Account**: Users can create a session account that will be used to redeem permissions.
-2. **Grant Permissions**: Users can grant ERC-7715 permissions to the session account.
+2. **Grant Permissions**: Users can grant Advanced Permissions to the session account.
 3. **Redeem Permissions**: The session account can use the granted permissions to perform actions on behalf of the MetaMask user.
 
 ## Learn More
 
 To learn more about Smart Accounts Kit, take a look at the following resources:
 
-- [ERC-7715 guide](https://docs.metamask.io/smart-accounts-kit/guides/advanced-permissions/execute-on-metamask-users-behalf/) - Learn how to use ERC-7715 permissions.
+- [Advanced Permissions (ERC-7715) guide](https://docs.metamask.io/smart-accounts-kit/guides/advanced-permissions/execute-on-metamask-users-behalf/) - Learn how to use MetaMask Adanved Permissions.
 - [Smart Accounts Kit Documentation](https://docs.metamask.io/smart-accounts-kit/) - Learn more about Smart Accounts Kit features and API.
