@@ -1,6 +1,6 @@
-# NextJS Advanced Permissions Starter
+# MetaMask Advanced Permissions (ERC-7715) Example
 
-This is a NextJS Advanced Permissions (ERC-7715) starter created with [@metamask/create-gator-app](https://www.npmjs.com/package/@metamask/create-gator-app).
+This is a MetaMask Advanced Permissions (ERC-7715) template created with [@metamask/create-gator-app](https://www.npmjs.com/package/@metamask/create-gator-app).
 
 This template is meant to help you bootstrap your own projects with [Metamask Smart Accounts Kit](https://docs.metamask.io/smart-accounts-kit/). It helps you build smart accounts with account abstraction, and powerful delegation features.
 
