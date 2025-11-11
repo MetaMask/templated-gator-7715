@@ -1,57 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { formatEther } from "viem";
-import { publicClient } from "@/services/publicClient";
-import { Trash2, ExternalLink } from "lucide-react";
-import { config } from "@/config";
+import { Address, formatEther } from "viem";
+import { ExternalLink } from "lucide-react";
+import { useAccount, useBalance } from "wagmi";
 
 interface WalletInfoProps {
-  address: string;
+  address: Address;
   label: string;
-  onClear?: () => void;
-  showClearButton?: boolean;
 }
 
-export default function WalletInfo({
-  address,
-  label,
-  onClear,
-  showClearButton = false,
-}: WalletInfoProps) {
-  const [balance, setBalance] = useState<string>("0");
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [trimmedAddress, setTrimmedAddress] = useState<string>("");
-
-  useEffect(() => {
-    if (address) {
-      setTrimmedAddress(`${address.slice(0, 6)}...${address.slice(-4)}`);
-    }
-  }, [address]);
-
-  useEffect(() => {
-    const fetchBalance = async () => {
-      if (!address) return;
-
-      try {
-        setIsLoading(true);
-        const balanceWei = await publicClient.getBalance({
-          address: address as `0x${string}`,
-        });
-        setBalance(formatEther(balanceWei));
-      } catch (error) {
-        console.error("Error fetching balance:", error);
-        setBalance("0");
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchBalance();
-  }, [address]);
+export default function WalletInfo({ address, label }: WalletInfoProps) {
+  const { data: balance, isLoading } = useBalance({ address });
+  const { chain } = useAccount();
 
   const viewOnEtherscan = () => {
-    window.open(`${config.ethScanerUrl}/address/${address}`, "_blank");
+    window.open(`${chain?.blockExplorers?.default?.url}/address/${address}`, "_blank");
   };
 
   return (
@@ -62,19 +25,10 @@ export default function WalletInfo({
             <h3 className="text-sm font-semibold text-gray-900 dark:text-white">
               {label}
             </h3>
-            {showClearButton && onClear && (
-              <button
-                onClick={onClear}
-                className="text-red-500 hover:text-red-400 text-xs"
-                title="Clear account"
-              >
-                <Trash2 className="h-4 w-4" />
-              </button>
-            )}
           </div>
           <div className="flex items-center gap-2">
             <p className="text-gray-700 dark:text-gray-300 font-mono text-sm">
-              {trimmedAddress}
+              {`${address.slice(0, 6)}...${address.slice(-4)}`}
             </p>
             <button
               onClick={viewOnEtherscan}
@@ -85,7 +39,7 @@ export default function WalletInfo({
             </button>
           </div>
           <p className="text-gray-600 dark:text-gray-400 text-xs">
-            Balance: {isLoading ? "Loading..." : `${balance} ETH`}
+            Balance: {isLoading ? "..." : `${formatEther(balance?.value ?? 0n)} ${balance?.symbol}`}
           </p>
         </div>
       </div>
