@@ -50,7 +50,7 @@ export default function GrantPermissionsButton() {
       const client = walletClient.extend(erc7715ProviderActions());
       const currentTime = Math.floor(Date.now() / 1000);
       // 30 days in seconds
-      const expiry = currentTime + 86400 * 30;
+      const expiry = currentTime + 24 * 60 * 60 * 30;
 
       const permissions = await client.requestExecutionPermissions([{
         chainId,
