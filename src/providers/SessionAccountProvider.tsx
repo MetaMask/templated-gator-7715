@@ -4,40 +4,45 @@ import {
   Implementation,
   MetaMaskSmartAccount,
   toMetaMaskSmartAccount,
-} from "@metamask/delegation-toolkit";
-import { createContext, useCallback, useState, useContext, useEffect } from "react";
+} from "@metamask/smart-accounts-kit";
+import { createContext, useState, useContext } from "react";
 import { generatePrivateKey, privateKeyToAccount } from "viem/accounts";
-import { publicClient } from "@/services/publicClient";
-import { usePermissions } from "./PermissionProvider";
+import { usePublicClient } from "wagmi";
 
-export const SessionAccountContext = createContext({
-  sessionAccount: null as MetaMaskSmartAccount<Implementation> | null,
+interface SessionAccountContext {
+  sessionAccount: MetaMaskSmartAccount | null,
+  createSessionAccount: () => Promise<void>,
+  isLoading: boolean,
+  error: string | null,
+}
+
+export const SessionAccountContext = createContext<SessionAccountContext>({
+  sessionAccount: null,
   createSessionAccount: async () => { },
   isLoading: false,
-  error: null as string | null,
-  clearSessionAccount: () => { },
+  error: null,
 });
-
-const PRIVATE_KEY_STORAGE_KEY = "gator_account_private_key";
 
 export const SessionAccountProvider = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
-  const [sessionAccount, setSessionAccount] =
-    useState<MetaMaskSmartAccount<Implementation> | null>(null);
-  const { removePermission } = usePermissions();
+  const [sessionAccount, setSessionAccount] = useState<MetaMaskSmartAccount | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const publicClient = usePublicClient();
 
-  const createSessionAccount = useCallback(async (privateKey?: `0x${string}`) => {
+  const createSessionAccount = async () => {
     try {
       setIsLoading(true);
       setError(null);
 
-      const key = privateKey || generatePrivateKey();
-      const account = privateKeyToAccount(key as `0x${string}`);
+      if (!publicClient) {
+        throw new Error("Public client not found");
+      }
+
+      const account = privateKeyToAccount(generatePrivateKey());
 
       const newSessionAccount = await toMetaMaskSmartAccount({
         client: publicClient,
@@ -48,45 +53,13 @@ export const SessionAccountProvider = ({
       });
 
       setSessionAccount(newSessionAccount);
-
-      // Save the private key to session storage
-      if (!privateKey) {
-        sessionStorage.setItem(PRIVATE_KEY_STORAGE_KEY, key);
-      }
     } catch (err) {
-      console.error("Error creating Session account:", err);
-      setError(err instanceof Error ? err.message : "Failed to create account");
+      console.error("Error creating a session account:", err);
+      setError(err instanceof Error ? err.message : "Failed to create a session account");
     } finally {
       setIsLoading(false);
     }
-  }, []);
-
-  const clearSessionAccount = useCallback(() => {
-    removePermission();
-    sessionStorage.removeItem(PRIVATE_KEY_STORAGE_KEY);
-    setSessionAccount(null);
-  }, [removePermission]);
-
-  // Initialize wallet from session storage on component mount if it exists
-  useEffect(() => {
-    const initializeWallet = async () => {
-      try {
-        setIsLoading(true);
-        const storedPrivateKey = sessionStorage.getItem(PRIVATE_KEY_STORAGE_KEY);
-
-        if (storedPrivateKey) {
-          await createSessionAccount(storedPrivateKey as `0x${string}`);
-        }
-      } catch (err) {
-        console.error("Error initializing wallet:", err);
-        setError(err instanceof Error ? err.message : "Failed to initialize wallet");
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    initializeWallet();
-  }, [createSessionAccount]);
+  };
 
   return (
     <SessionAccountContext.Provider
@@ -95,7 +68,6 @@ export const SessionAccountProvider = ({
         createSessionAccount,
         isLoading,
         error,
-        clearSessionAccount
       }}
     >
       {children}
